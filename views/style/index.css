@@ -1,0 +1,237 @@
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.cabecera{
+	width: 100%;
+	height: auto;
+	background: black;
+	color: white;
+}
+
+.cabecera__centro{
+	width: 100%;
+	max-width: 1300px;
+	margin: auto;
+	height: 60px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.cabecera__btn{
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+
+.cabecera__btns{
+	width: 200px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.cabecera__btns>div{
+	width: 50px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+
+.textField{
+	width: 600px;
+	display: flex;
+}
+
+.textField input{
+	width: 100%;
+}
+
+.cabecera__icono{
+	width: 40px;
+	height: 40px;
+	background: blue;
+}
+
+.menu{
+	width: 100%;
+	height: auto;
+	background: white;
+}
+
+.menu__centro{
+	width: 100%;
+	max-width: 1300px;
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: auto;
+}
+
+.menu__item{
+	width: 130px;
+	height: 80px;
+	border: solid;
+}
+
+.submenu{
+	position: absolute;
+	right: 0;
+	left: 0;
+	transform: translateY(-100%);
+	z-index: -1;
+	margin: auto;
+	width: 100%;
+	max-width: 1300px;
+	height: 200px;
+	background: silver;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform 0.3s ease-in;
+	will-change: transform;
+}
+
+.submenu--show{
+	transform: none;
+}
+
+.productos{
+	width: 100%;
+	max-width: 1200px;
+	height: auto;
+	margin: 10px auto 0 auto;
+	border-top: 2px solid silver;
+	padding-top: 20px;
+	display: flex;
+	justify-content: space-around;
+	flex-flow: wrap;
+}
+
+.productos__item{
+	padding: 10px 5px;
+	box-sizing: border-box;
+	width: 280px;
+	height: 350px;
+	border-radius: 10px;
+	box-shadow: 0 0 3px black;
+	margin: 10px 2px;
+}
+table,td,th
+{
+	text-align: center;
+	padding: 2px 2px;
+	border:1px solid red;
+}
+.productos__imagen{
+	width: 90%;
+	margin: auto;
+	height: 200px;
+}
+
+.productos__imagen img{
+	width: 100%;
+}
+
+.productos__nombre{
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+.productos__precio{
+	width: 100%;
+	display: block;
+}
+.productos__cantidad{
+	width: 30px;
+}
+
+.productos__add{
+	width: 80%;
+	height: 50px;
+	line-height: 50px;
+	margin: auto;
+	text-align: center;
+	display: block;
+	background: linear-gradient(red,darkred);
+	margin-top: 5px;
+	color: white;
+	text-decoration: none;
+	font-size: 26px;
+	border-radius: 10px;	
+}
+
+.spot{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.6);
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.spot__lienzo{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 250px;
+	background: white;
+	width: 100%;
+}
+
+.spot__image{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform:translate(500px,-50%);
+	opacity: 0;
+}
+
+.spot--Animation{
+	animation-name: Compra;
+	animation-duration: 1s;
+	animation-timing-function: ease-in; 
+}
+
+.spot__congratulation{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%) scale(0,0);
+	font-size: 50px;
+	color: red;
+	transition: transform 0.5s ease-in;
+}	
+
+.spot__congratulation--show{
+	transform: translate(-50%,-50%) scale(1,1);
+}
+
+.spot--Show{
+	opacity: 1;
+	pointer-events: auto;
+}
+
+
+@keyframes Compra{
+
+	from{
+		transform: translate(0,-50%);
+		opacity: 1;
+	}
+
+	to{
+		transform: translate(500px,-50%);
+		opacity: 0;
+	}
+
+}
