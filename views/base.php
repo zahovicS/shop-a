@@ -28,14 +28,13 @@ echo <<<HTML
 			</div>
 			<div class="cabecera__btns">
 				<div>menu</div>
-				<div>tienda</div>
+				<div><button class="comprar" id="btncarrito">Carrito</button></div>
 				<div>carrito</div>
 			</div>
-			
 		</div>
-
 	</header>
-
+	<div class="carrito__list" id="lista_carrito">
+	</div>
 	<nav class="menu">
 		<div class="menu__centro">
 			<div class="menu__item"></div>
@@ -151,29 +150,24 @@ function inf()
 				},2000);
 
 		});*/
-
+		btncarrito.addEventListener("click",()=>{		
+				lista_carrito.classList.toggle("carrito__list--show");
+		});
 		window.addEventListener("keydown",(e)=>{
 			if(e.key=="F5"){
 				e.preventDefault();
 			}
 		});
-
 		for(var frm=0;frm<items.length;frm++){
 			
 			items[frm].addEventListener("submit",function (e){
 				e.preventDefault();	
-
 				let frmProducto=new FormData(this);
-
 				let Ajax=new XMLHttpRequest();
-
 				Ajax.addEventListener("load",(e)=>{
-					console.log(e);
 					});
-
 				Ajax.open("post","proceso.php");	
 				Ajax.send(frmProducto);
-
 			});
 
 		}

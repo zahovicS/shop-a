@@ -6,5 +6,5 @@
 
 	$pagina=new controllersViews();
 	$pagina->resume();
-
+	
 ?>
