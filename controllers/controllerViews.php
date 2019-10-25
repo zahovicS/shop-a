@@ -20,6 +20,12 @@
 			$r->listar();
 			inf();
 		}
+		function carro()
+		{
+			session_start();
+			sup();
+			inf();
+		}
 		function resume()
 		{
 			session_start();
@@ -31,14 +37,5 @@
 			$_SESSION["total"].=",".$cantidad*$precio;
 			var_dump($_SESSION);
 		}
-		function ver()
-		{
-			echo json_encode(
-			$pro=explode(",",$_SESSION["productos"]),
-			$pre=explode(",",$_SESSION["precios"]),
-			$cant=explode(",",$_SESSION["cantidades"]),
-			$to=explode(",",$_SESSION["total"]));
-		}
 	}
-
  ?>

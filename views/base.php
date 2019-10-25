@@ -151,7 +151,7 @@ function inf()
 
 		});*/
 		btncarrito.addEventListener("click",()=>{		
-				lista_carrito.classList.toggle("carrito__list--show");
+			window.location='car.php';
 		});
 		window.addEventListener("keydown",(e)=>{
 			if(e.key=="F5"){
