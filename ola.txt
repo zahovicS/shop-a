@@ -1,0 +1,5 @@
+<div class="list_item">
+	<div class="nombre" id="nombre"></div>
+	<div class="precio" id="precio"></div>
+	<div class="cantidad" id="cantidad"></div>
+</div>

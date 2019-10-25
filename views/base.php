@@ -34,6 +34,7 @@ echo <<<HTML
 		</div>
 	</header>
 	<div class="carrito__list" id="lista_carrito">
+	
 	</div>
 	<nav class="menu">
 		<div class="menu__centro">
@@ -151,21 +152,25 @@ function inf()
 
 		});*/
 		btncarrito.addEventListener("click",()=>{		
-			window.location='car.php';
-		});
+			lista_carrito.classList.toggle("carrito__list--show");
+		});/*
 		window.addEventListener("keydown",(e)=>{
 			if(e.key=="F5"){
 				e.preventDefault();
 			}
-		});
+		});*/
 		for(var frm=0;frm<items.length;frm++){
-			
 			items[frm].addEventListener("submit",function (e){
 				e.preventDefault();	
+
 				let frmProducto=new FormData(this);
 				let Ajax=new XMLHttpRequest();
 				Ajax.addEventListener("load",(e)=>{
-					});
+					let f=0;
+					let json=JSON.parse(e.currentTarget.response);
+					console.log(json.productos);
+					lista_carrito.innerHTML="<div class='list_item'><div class='nombre' id='nombre'>"+json.productos+"</div><div class='precio' id='precio'>"+json.precios+"</div><div class='cantidad' id='cantidad'>"+json.cantidades+"</div></div>";
+				});
 				Ajax.open("post","proceso.php");	
 				Ajax.send(frmProducto);
 			});

@@ -19,13 +19,13 @@
 			$r=$tabla->record;
 			$r->listar();
 			inf();
-		}
+		}/*
 		function carro()
 		{
 			session_start();
 			sup();
 			inf();
-		}
+		}*/
 		function resume()
 		{
 			session_start();
@@ -35,7 +35,7 @@
 			$_SESSION["precios"].=",".$precio;
 			$_SESSION["cantidades"].=",".$cantidad;
 			$_SESSION["total"].=",".$cantidad*$precio;
-			var_dump($_SESSION);
+			echo json_encode($_SESSION);
 		}
 	}
  ?>
